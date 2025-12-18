@@ -71,6 +71,7 @@ public struct ADCard<Content: View>: View {
     }
 }
 
+#if DEBUG && canImport(SwiftUI) && !os(watchOS)
 #Preview("Card Styles") {
     VStack(spacing: 16) {
 
@@ -88,3 +89,4 @@ public struct ADCard<Content: View>: View {
     }
     .padding()
 }
+#endif
