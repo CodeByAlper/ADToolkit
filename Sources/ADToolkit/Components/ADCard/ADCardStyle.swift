@@ -2,7 +2,7 @@
 //  SwiftUIView.swift
 //  ADToolkit
 //
-//  Created by Alper Dal on 17.12.25.
+//  Created by Alper D on 17.12.25.
 //
 
 import SwiftUI
@@ -27,7 +27,6 @@ import SwiftUI
 ///   - cornerRadius: The corner radius of the card.
 ///   - shadowColor: The color of the shadow.
 ///   - shadowRadius: The blur radius of the shadow.
-@MainActor
 public struct ADCardStyle: Sendable {
     public var titleColor: Color
     public var titleFont: Font
@@ -84,35 +83,39 @@ public struct ADCardStyle: Sendable {
 
 public extension ADCardStyle {
 
-    static let `default` = ADCardStyle(
-        titleColor: .primary,
-        titleFont: .callout,
-        titleFontWeight: .semibold,
-        titleFontDesign: .default,
-        titleAlignment: .leading,
-        verticalSpacing: 6,
-        cardPadding: 12,
-        contentHorizontalPadding: 6,
-        dividerPadding: EdgeInsets(top: 4, leading: 0, bottom: 8, trailing: 0),
-        background: AnyShapeStyle(.ultraThinMaterial),
-        cornerRadius: 28,
-        shadowColor: .black.opacity(0.12),
-        shadowRadius: 2
-    )
+    static var `default`: ADCardStyle {
+        ADCardStyle(
+            titleColor: .primary,
+            titleFont: .callout,
+            titleFontWeight: .semibold,
+            titleFontDesign: .default,
+            titleAlignment: .leading,
+            verticalSpacing: 6,
+            cardPadding: 12,
+            contentHorizontalPadding: 6,
+            dividerPadding: EdgeInsets(top: 4, leading: 0, bottom: 8, trailing: 0),
+            background: AnyShapeStyle(.ultraThinMaterial),
+            cornerRadius: 28,
+            shadowColor: .black.opacity(0.12),
+            shadowRadius: 2
+        )
+    }
 
-    static let compact = ADCardStyle(
-        titleColor: .secondary,
-        titleFont: .footnote,
-        titleFontWeight: .medium,
-        titleFontDesign: .rounded,
-        titleAlignment: .leading,
-        verticalSpacing: 4,
-        cardPadding: 8,
-        contentHorizontalPadding: 4,
-        dividerPadding: EdgeInsets(top: 2, leading: 0, bottom: 4, trailing: 0),
-        background: AnyShapeStyle(.thinMaterial),
-        cornerRadius: 18,
-        shadowColor: .black.opacity(0.08),
-        shadowRadius: 1
-    )
+    static var compact: ADCardStyle {
+        ADCardStyle(
+            titleColor: .secondary,
+            titleFont: .footnote,
+            titleFontWeight: .medium,
+            titleFontDesign: .rounded,
+            titleAlignment: .leading,
+            verticalSpacing: 4,
+            cardPadding: 8,
+            contentHorizontalPadding: 4,
+            dividerPadding: EdgeInsets(top: 2, leading: 0, bottom: 4, trailing: 0),
+            background: AnyShapeStyle(.thinMaterial),
+            cornerRadius: 18,
+            shadowColor: .black.opacity(0.08),
+            shadowRadius: 1
+        )
+    }
 }
