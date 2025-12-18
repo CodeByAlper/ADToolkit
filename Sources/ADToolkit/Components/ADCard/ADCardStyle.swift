@@ -27,7 +27,7 @@ import SwiftUI
 ///   - cornerRadius: The corner radius of the card.
 ///   - shadowColor: The color of the shadow.
 ///   - shadowRadius: The blur radius of the shadow.
-public struct ADCardStyle: Sendable {
+public struct ADCardStyle {
     public var titleColor: Color
     public var titleFont: Font
     public var titleFontWeight: Font.Weight
