@@ -73,8 +73,10 @@ public struct ADCard<Content: View>: View {
 
 #if DEBUG && canImport(SwiftUI) && !os(watchOS)
 #Preview("Card Styles") {
-    VStack(spacing: 16) {
+    Text("ADCard")
+        .font(.largeTitle.monospaced())
 
+    ScrollView() {
         ADCard(title: "Default Card") {
             Text("Hello World")
         }
